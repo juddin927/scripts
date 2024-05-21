@@ -1,8 +1,6 @@
 import gzip
 import os
 import csv
-# import ipaddress
-# import re
 
 # Function to load IP addresses from a CSV file
 def load_ip_addresses_from_csv(csv_file):
@@ -35,11 +33,11 @@ def extract_ip_addresses_from_logs(log_dir):
                                 if packet_status == "ACCEPT":
                                     if src_ip:
                                        ip_addresses.add(src_ip)
-                                    # ip_addresses.add(dest_ip)
+                                  
     return ip_addresses
 
 
-csv_file = 'ip_addresses_test.csv'
+csv_file = 'ip_addresses_test.csv' 
 log_dir = './data1/'
 csv_ip_addresses = load_ip_addresses_from_csv(csv_file)
 log_ip_addresses = extract_ip_addresses_from_logs(log_dir)
